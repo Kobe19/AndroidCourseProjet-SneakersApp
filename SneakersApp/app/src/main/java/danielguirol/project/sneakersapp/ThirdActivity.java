@@ -36,10 +36,15 @@ public class ThirdActivity extends AppCompatActivity {
     }
 
 
+    /* ************************************************************************************************************************************************************************************************************
+     *                       PROGRAMMING THE SEARCH FONCTION IN THE MENU                                                                                                                                                          *                  *                                                                                                                                                                                                           *
+     * ************************************************************************************************************************************************************************************************************/
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.my_menu, menu);
+        //finding the item
         MenuItem menuItem = menu.findItem(R.id.app_bar_search);
+        //set the search view
         SearchView searchView = (SearchView) MenuItemCompat.getActionView(menuItem);
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -47,6 +52,7 @@ public class ThirdActivity extends AppCompatActivity {
                 return false;
             }
 
+            //Filter the list depending on what was entered in the search bar
             @Override
             public boolean onQueryTextChange(String newText) {
                 adapter.getFilter().filter(newText);
@@ -56,7 +62,7 @@ public class ThirdActivity extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
-    //implementing the preferences menu
+    //implementing the choices of preferences menu
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch(item.getItemId()){

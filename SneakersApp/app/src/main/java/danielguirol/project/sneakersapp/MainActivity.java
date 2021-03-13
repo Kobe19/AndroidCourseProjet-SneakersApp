@@ -54,11 +54,12 @@ public class MainActivity extends AppCompatActivity {
         imgB = findViewById(R.id.imgB);
         tex2 = findViewById(R.id.texte2);
 
+        //Retrieving datas(The name of the user) sent from another activity
         String username = getIntent().getStringExtra("key");
         System.out.println("from the main activity "+username);
         tex2.setText(username);
 
-
+        //On click, join the the list of shoes if you are already a user
         imgB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -71,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //On click, make the call to a predifined number
         phone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -78,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //On click, send a message
         msg.setOnClickListener(new View.OnClickListener() {
             final int penumbra = 0144225510;
             @Override
@@ -88,6 +91,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //On click, access the login and the register activity
         join.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -95,6 +99,10 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        /* ***********************************************************************************************************************************************************************************************************
+         *                       SLIDER                                                                                                                                                           *                  *                                                                                                                                                                                                           *
+         * ************************************************************************************************************************************************************************************************************/
 
         ImageSlider im = findViewById(R.id.slide);
 
@@ -110,6 +118,9 @@ public class MainActivity extends AppCompatActivity {
         Load_setting();
     }
 
+    /* ***********************************************************************************************************************************************************************************************************
+     *                       ADDING AND PROGRAMMING MENU                                                                                                                                                          *                  *                                                                                                                                                                                                           *
+     * ************************************************************************************************************************************************************************************************************/
     private void Load_setting() {
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
 
@@ -131,6 +142,15 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public void openDialog(){
+        MyDialog md = new MyDialog();
+        md.show(getSupportFragmentManager(),"information");
+    }
+
+    /* ***********************************************************************************************************************************************************************************************************
+     *                       ADDING AND PROGRAMMING MENU                                                                                                                                                         *                  *                                                                                                                                                                                                           *
+     * ************************************************************************************************************************************************************************************************************/
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.my_menu, menu);
@@ -150,16 +170,18 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void openDialog(){
-        MyDialog md = new MyDialog();
-        md.show(getSupportFragmentManager(),"information");
-    }
-
     @Override
     protected void onResume() {
         Load_setting();
         super.onResume();
     }
+
+
+
+    /* ***********************************************************************************************************************************************************************************************************
+    *                       PERFORMING THE CALL                                                                                                                                                                  *                  *                                                                                                                                                                                                           *
+    * ************************************************************************************************************************************************************************************************************/
+
 
     //In order to avoid Access denial permission we must declare in the manifest but also explicitly this such as dangerous permission
     private void makePhoneCall(){

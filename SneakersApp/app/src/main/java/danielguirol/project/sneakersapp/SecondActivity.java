@@ -27,10 +27,17 @@ public class SecondActivity extends AppCompatActivity {
         btn1 = findViewById(R.id.btn1);
         btn2 = findViewById(R.id.btn2);
 
+        /* ***********************************************************************************************************************************************************************************************************
+         *                       ATTACH THE ACTIVITY TO EACH FRAGMENT TO HANDLE THE CONTEXT IN SOME CASE                                                                                                             *                  *                                                                                                                                                                                                           *
+         * ***********************************************************************************************************************************************************************************************************/
         LoginFragment lg = new LoginFragment();
         lg.onAttach(this);
         RegisterFragment rg = new RegisterFragment();
         rg.onAttach(this);
+
+        /* ************************************************************************************************************************************************************************************************************
+         *                       DISPLAY FRAGMENT 1 AND FRAGMENT 2                                                                                                                                                    *                  *                                                                                                                                                                                                           *
+         * ************************************************************************************************************************************************************************************************************/
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,12 +62,17 @@ public class SecondActivity extends AppCompatActivity {
         });
     }
 
+
+    /* ************************************************************************************************************************************************************************************************************
+     *                       ADDING AND PROGRAMMING MENU                                                                                                                                                          *                  *                                                                                                                                                                                                           *
+     * ************************************************************************************************************************************************************************************************************/
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.my_menu, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
+    //Switch the preferences choices
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch(item.getItemId()){
