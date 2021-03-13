@@ -35,7 +35,7 @@ public class RegisterFragment extends Fragment {
     private Button reg;
     private NotificationHelper notifHelper;
 
-
+    //Get the context of the activity to store the data information in the database because we're not in an activity but a fragment
     @Override
     public void onAttach(@NonNull Activity activity) {
         super.onAttach(activity);
@@ -54,12 +54,15 @@ public class RegisterFragment extends Fragment {
         txt6 = view.findViewById(R.id.txt6);
         reg = view.findViewById(R.id.reg);
 
+        //Instantiate the notification helper to call the get manage method
         notifHelper = new NotificationHelper(getActivity());
 
+        /* ************************************************************************************************************************************************************************************************************
+         *          GET USER'S DATA, VERIFY IF IT'S EMPTY AND INSERT IT IN THE DATA BASE WITH DIFFERENT NOTIFICATION                                                                                                  *                                                                                                                                                                                                           *
+         * ************************************************************************************************************************************************************************************************************/
         reg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 String t1 = txt1.getText().toString();
                 String t2 = txt2.getText().toString();
                 String t3 = txt3.getText().toString();
@@ -75,6 +78,7 @@ public class RegisterFragment extends Fragment {
                         if (insert == true) {
                             Toast.makeText(getActivity(), "Registered Sucessful", Toast.LENGTH_SHORT).show();
 
+                            //Stating the Notification
                             String user = t2;
                             sendOnChannel("Connected Successfully", "Welcome "+ user +", Enjoy and share around you ");
 
@@ -88,6 +92,10 @@ public class RegisterFragment extends Fragment {
 
         return view;
     }
+
+    /* ************************************************************************************************************************************************************************************************************
+     *                       METHOD TO CALL THE NOTIFICATION HELPER AND SET THE TITLE AND MESSAGE OF THE NOTIFICATION                                                                                             *                  *                                                                                                                                                                                                           *
+     * ************************************************************************************************************************************************************************************************************/
 
     public void sendOnChannel(String title, String message){
         NotificationCompat.Builder nb = notifHelper.getchanelnotif(title, message);
