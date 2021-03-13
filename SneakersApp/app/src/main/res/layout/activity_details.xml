@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".DetailsActivity">
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="match_parent"
+        android:layout_height="162dp"
+        app:srcCompat="@drawable/front" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="208dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/img1"
+            android:layout_width="251dp"
+            android:layout_height="189dp"
+            android:layout_marginTop="22dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="208dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="32dp"
+                android:text="Details"
+                android:textStyle="bold|italic" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="32dp"
+                android:text="Price :"
+                android:textStyle="bold|italic" />
+
+            <TextView
+                android:id="@+id/price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="12dp"
+                android:textSize="40dp"
+                android:textStyle="bold|italic" />
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="5dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="71dp"
+            android:layout_height="wrap_content"
+            android:text="Id :"
+            android:textStyle="bold|italic" />
+
+        <TextView
+            android:id="@+id/text2"
+            android:layout_width="333dp"
+            android:layout_height="wrap_content"
+            android:textStyle="bold|italic" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="5dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/text3"
+            android:layout_width="71dp"
+            android:layout_height="wrap_content"
+            android:text="Brand :"
+            android:textStyle="bold|italic" />
+
+        <TextView
+            android:id="@+id/text4"
+            android:layout_width="333dp"
+            android:layout_height="wrap_content"
+            android:textStyle="bold|italic" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="5dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/text5"
+            android:layout_width="71dp"
+            android:layout_height="wrap_content"
+            android:text="Colorway :"
+            android:textStyle="bold|italic" />
+
+        <TextView
+            android:id="@+id/text6"
+            android:layout_width="333dp"
+            android:layout_height="wrap_content"
+            android:textStyle="bold|italic" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="5dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/text7"
+            android:layout_width="71dp"
+            android:layout_height="wrap_content"
+            android:text="Name :"
+            android:textStyle="bold|italic" />
+
+        <TextView
+            android:id="@+id/text8"
+            android:layout_width="333dp"
+            android:layout_height="wrap_content"
+            android:textStyle="bold|italic" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="5dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/text9"
+            android:layout_width="71dp"
+            android:layout_height="wrap_content"
+            android:text="Shoe :"
+            android:textStyle="bold|italic" />
+
+        <TextView
+            android:id="@+id/text10"
+            android:layout_width="332dp"
+            android:layout_height="wrap_content"
+            android:textStyle="bold|italic" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="5dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/text11"
+            android:layout_width="71dp"
+            android:layout_height="wrap_content"
+            android:text="Title :"
+            android:textStyle="bold|italic" />
+
+        <TextView
+            android:id="@+id/text12"
+            android:layout_width="333dp"
+            android:layout_height="wrap_content"
+            android:textStyle="bold|italic" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="5dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/text13"
+            android:layout_width="71dp"
+            android:layout_height="wrap_content"
+            android:text="Year :"
+            android:textStyle="bold|italic" />
+
+        <TextView
+            android:id="@+id/text14"
+            android:layout_width="333dp"
+            android:layout_height="wrap_content"
+            android:textStyle="bold|italic" />
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/btn1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Get infos for payment"
+        android:textStyle="bold|italic" />
+
+</LinearLayout>

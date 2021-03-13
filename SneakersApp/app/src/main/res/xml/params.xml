@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="Screen Color">
+
+        <SwitchPreference
+            android:title="Turn to Dark"
+            android:key="Dark"
+            android:defaultValue="false"
+            android:summaryOn="The darkscreen is On"
+            android:summaryOff="The darkscreen is Off"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Screen Orientation">
+
+        <ListPreference
+            android:key="ORIENTATION"
+            android:defaultValue="false"
+            android:title="Orientation"
+            android:entries="@array/items_names"
+            android:entryValues="@array/items_values" />
+    </PreferenceCategory>
+</PreferenceScreen>
