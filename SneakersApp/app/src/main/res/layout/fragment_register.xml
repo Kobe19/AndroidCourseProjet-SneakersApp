@@ -15,73 +15,73 @@
         android:id="@+id/frag1">
 
         <EditText
-            android:layout_width="386dp"
+            android:id="@+id/txt1"
+            android:layout_width="377dp"
             android:layout_height="36dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/edit_form"
             android:hint=" enter your names here"
-            android:textStyle="italic"
-            android:id="@+id/txt1"
-            android:textColorHint="#FF6200EE"/>
+            android:textColorHint="#FF6200EE"
+            android:textStyle="italic" />
 
 
         <EditText
-            android:layout_width="386dp"
+            android:id="@+id/txt2"
+            android:layout_width="378dp"
             android:layout_height="38dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/edit_form"
             android:hint=" enter your username here"
-            android:textStyle="italic"
-            android:id="@+id/txt2"
-            android:textColorHint="#FF6200EE"/>
+            android:textColorHint="#FF6200EE"
+            android:textStyle="italic" />
 
 
         <EditText
-            android:layout_width="386dp"
+            android:id="@+id/txt3"
+            android:layout_width="376dp"
             android:layout_height="38dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/edit_form"
             android:hint=" enter your email address here"
-            android:textStyle="italic"
-            android:id="@+id/txt3"
-            android:textColorHint="#FF6200EE"/>
+            android:textColorHint="#FF6200EE"
+            android:textStyle="italic" />
 
 
         <EditText
-            android:layout_width="386dp"
+            android:id="@+id/txt4"
+            android:layout_width="376dp"
             android:layout_height="38dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/edit_form"
             android:hint=" enter your address here"
-            android:textStyle="italic"
-            android:id="@+id/txt4"
-            android:textColorHint="#FF6200EE"/>
+            android:textColorHint="#FF6200EE"
+            android:textStyle="italic" />
 
         <EditText
-            android:layout_width="386dp"
+            android:id="@+id/txt5"
+            android:layout_width="376dp"
             android:layout_height="39dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/edit_form"
             android:hint=" enter your phone number here"
-            android:textStyle="italic"
-            android:id="@+id/txt5"
-            android:textColorHint="#FF6200EE"/>
+            android:textColorHint="#FF6200EE"
+            android:textStyle="italic" />
 
         <EditText
-            android:layout_width="386dp"
+            android:id="@+id/txt6"
+            android:layout_width="374dp"
             android:layout_height="39dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/edit_form"
             android:hint=" enter your password here"
-            android:textStyle="italic"
-            android:id="@+id/txt6"
-            android:textColorHint="#FF6200EE"/>
+            android:textColorHint="#FF6200EE"
+            android:textStyle="italic" />
 
         <Button
             android:background="@drawable/edit_form"
