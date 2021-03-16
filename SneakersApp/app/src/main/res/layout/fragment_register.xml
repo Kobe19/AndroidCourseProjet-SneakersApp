@@ -11,7 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="10dp"
+        android:id="@+id/frag1">
 
         <EditText
             android:layout_width="386dp"
@@ -21,7 +22,8 @@
             android:background="@drawable/edit_form"
             android:hint=" enter your names here"
             android:textStyle="italic"
-            android:id="@+id/txt1"/>
+            android:id="@+id/txt1"
+            android:textColorHint="#FF6200EE"/>
 
 
         <EditText
@@ -32,7 +34,8 @@
             android:background="@drawable/edit_form"
             android:hint=" enter your username here"
             android:textStyle="italic"
-            android:id="@+id/txt2"/>
+            android:id="@+id/txt2"
+            android:textColorHint="#FF6200EE"/>
 
 
         <EditText
@@ -43,7 +46,8 @@
             android:background="@drawable/edit_form"
             android:hint=" enter your email address here"
             android:textStyle="italic"
-            android:id="@+id/txt3"/>
+            android:id="@+id/txt3"
+            android:textColorHint="#FF6200EE"/>
 
 
         <EditText
@@ -54,7 +58,8 @@
             android:background="@drawable/edit_form"
             android:hint=" enter your address here"
             android:textStyle="italic"
-            android:id="@+id/txt4"/>
+            android:id="@+id/txt4"
+            android:textColorHint="#FF6200EE"/>
 
         <EditText
             android:layout_width="386dp"
@@ -64,7 +69,8 @@
             android:background="@drawable/edit_form"
             android:hint=" enter your phone number here"
             android:textStyle="italic"
-            android:id="@+id/txt5"/>
+            android:id="@+id/txt5"
+            android:textColorHint="#FF6200EE"/>
 
         <EditText
             android:layout_width="386dp"
@@ -74,7 +80,8 @@
             android:background="@drawable/edit_form"
             android:hint=" enter your password here"
             android:textStyle="italic"
-            android:id="@+id/txt6"/>
+            android:id="@+id/txt6"
+            android:textColorHint="#FF6200EE"/>
 
         <Button
             android:background="@drawable/edit_form"

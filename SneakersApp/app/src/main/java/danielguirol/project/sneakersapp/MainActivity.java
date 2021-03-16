@@ -34,6 +34,13 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+    public TextView one;
+    public TextView two;
+    public TextView three;
+    public TextView four;
+    public TextView five;
+    public TextView six;
+    public TextView seven;
     private LinearLayout Ly;
     private ImageView phone, msg, join;
     private ImageButton imgB;
@@ -52,7 +59,14 @@ public class MainActivity extends AppCompatActivity {
         msg = findViewById(R.id.msg);
         join = findViewById(R.id.join);
         imgB = findViewById(R.id.imgB);
-        tex2 = findViewById(R.id.texte2);
+        tex2 = findViewById(R.id.eight);
+        one = findViewById(R.id.one);
+        two = findViewById(R.id.two);
+        three = findViewById(R.id.three);
+        four = findViewById(R.id.four);
+        five = findViewById(R.id.five);
+        six = findViewById(R.id.six);
+        seven = findViewById(R.id.seven);
 
         //Retrieving datas(The name of the user) sent from another activity
         String username = getIntent().getStringExtra("key");
@@ -127,9 +141,25 @@ public class MainActivity extends AppCompatActivity {
         Boolean mytag = sp.getBoolean("Dark", false);
         if (mytag) {
             Ly.setBackgroundColor(Color.parseColor("#222222"));
+            one.setTextColor(Color.parseColor("#ffffff"));
+            two.setTextColor(Color.parseColor("#ffffff"));
+            three.setTextColor(Color.parseColor("#ffffff"));
+            four.setTextColor(Color.parseColor("#ffffff"));
+            five.setTextColor(Color.parseColor("#ffffff"));
+            six.setTextColor(Color.parseColor("#ffffff"));
+            seven.setTextColor(Color.parseColor("#ffffff"));
+            tex2.setTextColor(Color.parseColor("#ffffff"));
         } else {
             // set the colors back
             Ly.setBackgroundColor(Color.parseColor("#ffffff"));
+            one.setTextColor(Color.parseColor("#222222"));
+            two.setTextColor(Color.parseColor("#222222"));
+            three.setTextColor(Color.parseColor("#222222"));
+            four.setTextColor(Color.parseColor("#222222"));
+            five.setTextColor(Color.parseColor("#222222"));
+            six.setTextColor(Color.parseColor("#222222"));
+            seven.setTextColor(Color.parseColor("#222222"));
+            tex2.setTextColor(Color.parseColor("#222222"));
         }
 
         String list = sp.getString("ORIENTATION", "false");
@@ -154,6 +184,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.my_menu, menu);
+        menu.findItem(R.id.menu2).setOnMenuItemClickListener((MenuItem.OnMenuItemClickListener) v -> {
+                Intent j = new Intent(this,InfosActivity.class);
+                startActivity(j);
+            return false;
+        });
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -163,10 +198,8 @@ public class MainActivity extends AppCompatActivity {
             case R.id.menu1:
                 Intent i = new Intent(this,Preferences.class);
                 startActivity(i);
-            case R.id.menu2:
-                Intent j = new Intent(this,Preferences.class);
-                startActivity(j);
         }
+
         return super.onOptionsItemSelected(item);
     }
 

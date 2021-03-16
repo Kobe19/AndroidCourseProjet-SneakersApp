@@ -2,7 +2,11 @@ package danielguirol.project.sneakersapp;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.pm.ActivityInfo;
 import android.graphics.Bitmap;
+import android.graphics.Color;
+import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,6 +26,9 @@ import java.util.Vector;
 
 public class MyAdapter extends BaseAdapter implements Filterable{
 
+    /* ************************************************************************************************************************************************************************************************************
+     *                       DECLARING VARIABLE AND CREATING HELPING CONTAINERS                                                                                                                                   *                  *                                                                                                                                                                                                           *
+     * ************************************************************************************************************************************************************************************************************/
     //creating a vector that will contains list of link coming from the AsyncFlickrJSONDataForList
     //java.util.Vector<String> Vector = new Vector<String>();
     java.util.Vector<JSONData> Vector = new Vector<JSONData>();
@@ -30,6 +37,7 @@ public class MyAdapter extends BaseAdapter implements Filterable{
 
     //a variable context to access some application-specific ressources and classes
     Context context_;
+
 
     //A constructor to call in the main of the activity
     public MyAdapter(Context context) {
@@ -61,10 +69,13 @@ public class MyAdapter extends BaseAdapter implements Filterable{
         return position;
     }
 
+
+    /* ************************************************************************************************************************************************************************************************************
+     *                       GET THE VECTOR ITEM AND SET IT IN THE INFLATE LAYOUT                                                                                                                                 *                                                                                                                                                                                                           *
+     * ************************************************************************************************************************************************************************************************************/
     //This getView will handle the display of the information from the vector in a selected view
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        Bitmap resp ;
 
         try{
             final JSONData str = (JSONData) this.getItem(position);
@@ -85,10 +96,10 @@ public class MyAdapter extends BaseAdapter implements Filterable{
 
             // The method that will contain the response
             Response.Listener<Bitmap> rep_listener = response -> {
-
                 imageView2.setImageBitmap(response);
             };
 
+            //taking the Url and Downloading the image with Volley
             ImageRequest imageRequest = new ImageRequest(str.getUrl(), rep_listener, 0, 0, ImageView.ScaleType.CENTER_CROP,
                     null, new Response.ErrorListener() {
 
@@ -99,6 +110,11 @@ public class MyAdapter extends BaseAdapter implements Filterable{
                 }
             });
 
+            queue.add(imageRequest);
+
+            /* ************************************************************************************************************************************************************************************************************
+             *                       SENDING DATA FOR THE IMAGE DETAILS                                                                                                                                 *                                                                                                                                                                                                           *
+             * ************************************************************************************************************************************************************************************************************/
             convertView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -116,7 +132,6 @@ public class MyAdapter extends BaseAdapter implements Filterable{
                 }
             });
 
-            queue.add(imageRequest);
         }catch (Exception e){
 
         }
@@ -124,14 +139,17 @@ public class MyAdapter extends BaseAdapter implements Filterable{
         return convertView;
     }
 
+    //Remplace Initial Vector with the filter vector
     public void setinfo(Vector<JSONData> filtervector){
         this.Vector=filtervector;
     }
 
+    //Refresh the data with filtered vector
     public void refresh(){
         notifyDataSetChanged();
     }
 
+    //Retrieve the filter and setting it on the initial data
     @Override
     public Filter getFilter() {
         if(filterHelper == null){
@@ -139,5 +157,7 @@ public class MyAdapter extends BaseAdapter implements Filterable{
         }
         return filterHelper;
     }
+
+
 }
 

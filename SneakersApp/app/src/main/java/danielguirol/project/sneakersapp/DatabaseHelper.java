@@ -13,17 +13,25 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         super(context, "sneakerdb", null, 1);
     }
 
+    /* ************************************************************************************************************************************************************************************************************
+     *                       CREATE TABLE METHOD                                                                                                                                                                  *                                                                                                                                                                                                           *
+     * ************************************************************************************************************************************************************************************************************/
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("Create table user(id integer primary key autoincrement, name text, username text, email text, address text, phone integer, password text)");
     }
 
+    /* ************************************************************************************************************************************************************************************************************
+     *                       UPDATING IF WHETHER THERE IS A NEW VERSION                                                                                                                                           *                                                                                                                                                                                                           *
+     * ************************************************************************************************************************************************************************************************************/
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("Drop table if exists user");
     }
 
-    //insertion in the table
+    /* ************************************************************************************************************************************************************************************************************
+     *                       INSERTION OF THE DATA IN THE TABLE                                                                                                                         *                                                                                                                                                                                                           *
+     * ************************************************************************************************************************************************************************************************************/
     public boolean insert(String name, String username, String email, String address, String phone, String password){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
@@ -41,6 +49,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
+    /* ************************************************************************************************************************************************************************************************************
+     *                       CHECKING IF THE USERNAME IS CORRECT                                                                                                                          *                                                                                                                                                                                                           *
+     * ************************************************************************************************************************************************************************************************************/
     public boolean checkuser(String username){
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery("Select * from user where username =?", new String[]{username});
@@ -51,6 +62,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
+    /* ************************************************************************************************************************************************************************************************************
+     *                       CHECKING IF THE USERNAME & PASSWORD ARE CORRECT                                                                                                                         *                                                                                                                                                                                                           *
+     * ************************************************************************************************************************************************************************************************************/
     public boolean checkuandpass(String username, String password){
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery("Select * from user where username =? and password =?", new String[]{username,password});
@@ -58,16 +72,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return true;
         }else{
             return false;
-        }
-    }
-
-    public boolean takeuser(String username){
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("Select * from user where username =?", new String[]{username});
-        if(cursor.getCount()>0){
-            return false;
-        }else{
-            return true;
         }
     }
 }

@@ -10,8 +10,12 @@ import androidx.appcompat.app.AppCompatDialogFragment;
 public class MyDialog extends AppCompatDialogFragment {
 
 
+    /* ************************************************************************************************************************************************************************************************************
+     *                       DIALOG BOX TO HANDLE THE IMAGE BUTTON IN THE MAIN ACTIVITY                                                                                                                           *                  *                                                                                                                                                                                                           *
+     * ************************************************************************************************************************************************************************************************************/
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
+        //We're using Builder to provide clear separation between construction and separation
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setTitle("Information")
                 .setMessage("You must create an account first")

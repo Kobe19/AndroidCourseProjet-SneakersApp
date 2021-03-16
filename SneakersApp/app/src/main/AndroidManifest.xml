@@ -12,14 +12,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SneakersApp">
-        <activity android:name=".DetailsActivity"></activity>
-        <activity android:name=".MainActivity2" />
-        <activity android:name=".ThirdActivity" />
-        <activity android:name=".SecondActivity" />
+        <activity android:name=".InfosActivity"
+            android:label="About"></activity>
+        <activity android:name=".DetailsActivity"
+            android:label="Details"/>
+        <activity android:name=".ThirdActivity"
+            android:label="Market"/>
+        <activity android:name=".SecondActivity"
+            android:label="Connectivity"/>
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:label="LibMain">
+            android:label="Home">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -18,7 +18,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class AsyncJSONData extends AsyncTask<String, Void, JSONObject> {
-    URL url = null;
+    URL url;
     JSONObject jsonb;
     String img;
     String brand;
@@ -95,6 +95,9 @@ public class AsyncJSONData extends AsyncTask<String, Void, JSONObject> {
                 shoe = jObj.getString("shoe");
                 price = jObj.getString("retailPrice");
 
+                if (img.equals("null")){
+                    img = "https://st3.depositphotos.com/23594922/31822/v/600/depositphotos_318221368-stock-illustration-missing-picture-page-for-website.jpg";
+                }else{
                 JSONData data = new JSONData();
                 data.setUrl(img);
                 data.setBrand(brand);
@@ -109,9 +112,9 @@ public class AsyncJSONData extends AsyncTask<String, Void, JSONObject> {
                 adapter.Add(data);
 
                 adapter.notifyDataSetChanged();
-
+                }
                 //some tests
-                Log.i("JFL3", "Adding to adapter url : " + url);
+                Log.i("JFL3", "Adding to adapter url : " + img);
                 Log.i("JFL3", "Adding to adapter brand : " + brand);
             }
 

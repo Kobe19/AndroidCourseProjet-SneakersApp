@@ -7,6 +7,9 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.pm.ActivityInfo;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 
@@ -15,10 +18,12 @@ import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 import androidx.fragment.app.Fragment;
 
+import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,6 +39,7 @@ public class RegisterFragment extends Fragment {
     private TextView txt6;
     private Button reg;
     private NotificationHelper notifHelper;
+    private LinearLayout Ly;
 
     //Get the context of the activity to store the data information in the database because we're not in an activity but a fragment
     @Override
@@ -44,7 +50,7 @@ public class RegisterFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+        // Call The Inflate layout element for this fragment and affecting them to local variables
         View view = inflater.inflate(R.layout.fragment_register, container, false);
         txt1 = view.findViewById(R.id.txt1);
         txt2 = view.findViewById(R.id.txt2);
@@ -53,6 +59,8 @@ public class RegisterFragment extends Fragment {
         txt5 = view.findViewById(R.id.txt5);
         txt6 = view.findViewById(R.id.txt6);
         reg = view.findViewById(R.id.reg);
+        Ly = view.findViewById(R.id.frag1);
+        Load_setting();
 
         //Instantiate the notification helper to call the get manage method
         notifHelper = new NotificationHelper(getActivity());
@@ -80,7 +88,7 @@ public class RegisterFragment extends Fragment {
 
                             //Stating the Notification
                             String user = t2;
-                            sendOnChannel("Connected Successfully", "Welcome "+ user +", Enjoy and share around you ");
+                            sendOnChannel("Register Successful", "Welcome to the Community "+ user +" Now get connect to see more content");
 
                         }
                     }else if(chk == false){
@@ -100,6 +108,28 @@ public class RegisterFragment extends Fragment {
     public void sendOnChannel(String title, String message){
         NotificationCompat.Builder nb = notifHelper.getchanelnotif(title, message);
         notifHelper.getManage().notify(2, nb.build());
+    }
+
+    /* ***********************************************************************************************************************************************************************************************************
+     *                       ADDING AND PROGRAMMING MENU                                                                                                                                                          *                  *                                                                                                                                                                                                           *
+     * ************************************************************************************************************************************************************************************************************/
+    private void Load_setting() {
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getActivity());
+
+        Boolean mytag = sp.getBoolean("Dark", false);
+        if (mytag) {
+            Ly.setBackgroundColor(Color.parseColor("#222222"));
+        } else {
+            // set the colors back
+            Ly.setBackgroundColor(Color.parseColor("#ffffff"));
+        }
+
+    }
+
+    @Override
+     public void onResume() {
+        Load_setting();
+        super.onResume();
     }
 
 }

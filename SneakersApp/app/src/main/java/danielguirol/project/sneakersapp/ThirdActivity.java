@@ -37,11 +37,16 @@ public class ThirdActivity extends AppCompatActivity {
 
 
     /* ************************************************************************************************************************************************************************************************************
-     *                       PROGRAMMING THE SEARCH FONCTION IN THE MENU                                                                                                                                                          *                  *                                                                                                                                                                                                           *
+     *                       PROGRAMMING THE SEARCH FONCTION IN THE MENU                                                                                                                                          *                  *                                                                                                                                                                                                           *
      * ************************************************************************************************************************************************************************************************************/
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.my_menu, menu);
+        menu.findItem(R.id.menu2).setOnMenuItemClickListener((MenuItem.OnMenuItemClickListener) v -> {
+            Intent j = new Intent(this,InfosActivity.class);
+            startActivity(j);
+            return false;
+        });
         //finding the item
         MenuItem menuItem = menu.findItem(R.id.app_bar_search);
         //set the search view
@@ -69,10 +74,8 @@ public class ThirdActivity extends AppCompatActivity {
             case R.id.menu1:
                 Intent i = new Intent(this,Preferences.class);
                 startActivity(i);
-            case R.id.menu2:
-                Intent j = new Intent(this,Preferences.class);
-                startActivity(j);
         }
         return super.onOptionsItemSelected(item);
     }
+
 }
