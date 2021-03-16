@@ -42,11 +42,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         cv.put("phone",phone);
         cv.put("password",password);
         long ins = db.insert("user", null,cv);
-        if(ins==-1){
-            return false;
-        }else {
-            return true;
-        }
+        return ins != -1;
     }
 
     /* ************************************************************************************************************************************************************************************************************
@@ -55,11 +51,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public boolean checkuser(String username){
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery("Select * from user where username =?", new String[]{username});
-        if(cursor.getCount()>0){
-            return false;
-        }else{
-            return true;
-        }
+        return cursor.getCount() <= 0;
     }
 
     /* ************************************************************************************************************************************************************************************************************
@@ -68,10 +60,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public boolean checkuandpass(String username, String password){
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery("Select * from user where username =? and password =?", new String[]{username,password});
-        if(cursor.getCount()>0){
-            return true;
-        }else{
-            return false;
-        }
+        return cursor.getCount() > 0;
     }
 }

@@ -41,7 +41,6 @@ public class LoginFragment extends Fragment {
 
         // Call The Inflate layout element for this fragment and affecting them to local variables
         View view = inflater.inflate(R.layout.fragment_login, container, false);
-        suscribe = view.findViewById(R.id.suscribe);
         login = view.findViewById(R.id.login);
         log = view.findViewById(R.id.log);
         pwd = view.findViewById(R.id.pwd);
