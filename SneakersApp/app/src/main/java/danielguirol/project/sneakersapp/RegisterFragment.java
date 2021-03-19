@@ -86,6 +86,14 @@ public class RegisterFragment extends Fragment {
                         if (insert == true) {
                             Toast.makeText(getActivity(), "Registered Sucessful", Toast.LENGTH_SHORT).show();
 
+                            //Removing text in the boxes
+                            txt1.setText(" ");
+                            txt2.setText(" ");
+                            txt3.setText(" ");
+                            txt4.setText(" ");
+                            txt5.setText(" ");
+                            txt6.setText(" ");
+
                             //Stating the Notification
                             String user = t2;
                             sendOnChannel("Register Successful", "Welcome to the Community "+ user +" Now get connect to see more content");

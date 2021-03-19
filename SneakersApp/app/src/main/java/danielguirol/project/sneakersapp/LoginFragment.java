@@ -22,7 +22,7 @@ import android.widget.Toast;
 
 public class LoginFragment extends Fragment {
     DatabaseHelper db;
-    private Button suscribe, login;
+    private Button login;
     private TextView log, pwd;
     String value;
     private LinearLayout Ly;
